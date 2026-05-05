@@ -84,12 +84,12 @@ Investigation Steps:
 
 
 
-✅ Final Result
+## ✅ Final Result
 
 Private EC2 → Internet working
 NAT fully functional
 Huge cost savings achieved
 
-🎯 Conclusion
+## 🎯 Conclusion
 
 Switching to NAT Instance significantly reduces AWS costs and works efficiently for low to medium workloads when configured correctly.
