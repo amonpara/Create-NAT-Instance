@@ -1,0 +1,27 @@
+## Enable IP Forwarding
+
+- Login to your EC2
+
+sudo sysctl -w net.ipv4.ip_forward=1
+echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+sudo yum install -y iptables-services
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo service iptables save
+sudo systemctl enable iptables
+
+----------------------------------
+
+🐞 Issue Faced
+
+In Most of the case Root cause:
+- iptables rule was:
+  - -o eth0
+
+- But actual interface was:
+  - ens5
+
+So, for that fix it with eth0
+
+sudo iptables -t nat -F
+sudo iptables -t nat -A POSTROUTING -o ens5 -j MASQUERADE
+sudo service iptables save
