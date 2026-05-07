@@ -23,9 +23,9 @@
 
 set -e
 
-echo "========================================"
+echo "==================================================="
 echo "AWS NAT Instance Setup Script by Abhishek Monpara"
-echo "========================================"
+echo "==================================================="
 
 # Detect default network interface
 INTERFACE=$(ip route | grep default | awk '{print $5}')
