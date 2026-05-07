@@ -24,7 +24,7 @@
 set -e
 
 echo "========================================"
-echo "AWS NAT Instance Setup Started"
+echo "AWS NAT Instance Setup Script by Abhishek Monpara"
 echo "========================================"
 
 # Detect default network interface
